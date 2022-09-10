@@ -28,11 +28,13 @@ app.post("/", (req, res) =>{
     res.redirect("/");
   }
 
-
-
-
-
+  if (req.body.remove === "remove"){
+    items = [];
+    res.redirect("/");
+  }
 });
+
+
 
 //Work list page
 app.get("/work", (req, res) =>{
@@ -51,6 +53,6 @@ app.get("/about", (req, res) =>{
   res.render("about");
 });
 
-app.listen(process.env.PORT,() =>{
+app.listen(3000,() =>{
   console.log("server started");
 });

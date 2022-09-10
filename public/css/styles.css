@@ -81,6 +81,7 @@ input[type="text"] {
   text-align: center;
   height: 60px;
   top: 10px;
+  padding-bottom: 10px;
   border: none;
   background: transparent;
   font-size: 20px;

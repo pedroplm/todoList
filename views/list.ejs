@@ -1,9 +1,22 @@
-<%- include("header") -%>
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>To Do List!</title>
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
     <div class="box" id = "heading">
       <h1><%= listTitle %> List</h1>
     </div>
     <div class="box">
+      <% if (newListItems[0] === "remove"){%>
+        <% newListItem = [];%>
+        <div class="item">
+          <input type="checkbox">
+          <p></p>
+        </div>
+    <%  } %>
       <%for (var i  = 0; i < newListItems.length; i++){%>
 
         <div class="item">
@@ -12,11 +25,16 @@
         </div>
 
     <%}%>
-
     <form  action="/" method="post">
       <input type="text" name="Item" placeholder="New Item" autocomplete="off">
       <button type = "submit" name = "list" value = <%= listTitle %>  >+</button>
     </form>
+    <form  action="/" method="post">
+      <input type="text" name="Item" placeholder="Clean List" autocomplete="off">
+      <button type = "submit" name = "remove" value = "remove">-</button>
+    </form>
+
     </div>
+    <body>
 
 <%- include("footer") -%>
